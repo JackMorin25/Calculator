@@ -1,12 +1,18 @@
-const all_buttons = document.querySelectorAll('.btn');
-console.log(all_buttons);
+const display = document.getElementById("display");
 
-
-
-function addElement(){
-    console.log(`hi`)
+function addElement(input){
+    display.value += input
 }
 
 function getResult(){
+    try{
+        display.value = eval(display.value);
+    }
+    catch(error){
+        display.value = "Error";
+    }
+}
 
+function clearDisplay(){
+    display.value = "";
 }
